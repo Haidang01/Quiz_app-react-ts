@@ -1,0 +1,160 @@
+.App{
+  height:100vh;
+  display:flex;
+  background-color:#020230;
+  color:#fff;
+}
+.main{
+  display:flex;
+  flex-direction:column;
+  flex: 3;
+  background: linear-gradient(to bottom,rgba(0,0,0,0),#020230), url('./assets/bg.jpg')center;
+}
+.top{
+  flex:1;
+  position:relative;
+}
+.bottom{
+  flex:1;
+}
+.timer{
+  width:60px;
+  height:60px;
+  border:4px solid #fff;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:25px;
+  font-weight:bold;
+  position:absolute;
+  bottom:10px;
+  left:110px;
+}
+.money{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  padding:10px;
+}
+.moneyList{
+  padding: 40px;
+  list-style: none;
+  width: 100%;
+}
+.moneyItem{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-bottom:3px;
+  border-radius: 5px;
+  padding-left:10px;
+}
+.moneyItem.active{
+  background-color: teal;
+}
+
+.moneyItemNumber{
+ width: 40%;
+  font-size: 17px;
+  font-weight: 100;
+}
+.moneyItemAmount{
+  width:30%;
+  font-size: 18px;
+  font-weight: 300;
+}
+.trivia{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: start;
+  gap:25px;
+  padding:20px;
+}
+.question{
+  margin-top:30px;
+  width:80%;
+  background-color: #000;
+  border: 2px solid #fff;
+  text-align: center;
+  padding:20px;
+  border-radius:10px;
+  font-size:20px;
+}
+.answers{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap:15px;
+}
+.answer{
+  cursor:pointer;
+  width:39%;
+  padding:10px;
+  border:1px solid #fff;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:400;
+  background:linear-gradient(#0e0124,#22074d);
+  text-align:center;
+}
+.answer:hover{
+  background:darkblue;
+  transition-duration: 0.2s;
+  transition: background 0.5s ease-out;
+}
+.answer.active{
+  background:darkblue;
+}
+.answer.correct{
+  animation:correct 3s ease forwards;
+}
+@keyframes correct{
+  0%,
+  24%,
+  42%{
+    background: darkblue;
+  }
+  20%,
+  40%,
+  60%{
+    background:linear-gradient(#0e0124,#22074d);
+  }
+  62%,
+  100%{
+    background:green;
+  }
+}
+.answer.wrong{
+  animation:wrong 3s ease forwards;
+}
+@keyframes wrong{
+  0%,
+  24%,
+  42%{
+    background: darkblue;
+  }
+  20%,
+  40%,
+  60%{
+    background:linear-gradient(#0e0124,#22074d);
+  }
+  62%,
+  100%{
+    background:crimson;
+  }
+}
+.endText{
+  position:relative;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  margin:auto;
+}
